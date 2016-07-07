@@ -1,17 +1,17 @@
 var data = {
   users: [
-    'Temi',
-    'Weronica',
     'Reece',
+    'Temi',
     'Vil',
+    'Weronica',
     'Elias'
   ],
   jobs: [
-    'Hallway / Pfand',
     'Shopping',
+    'Off',
     'Kitchen',
-    'Bathroom',
-    'Off'
+    'Hallway / Pfand',
+    'Bathroom'
   ]
 }
 
@@ -35,12 +35,13 @@ var App = (function (data) {
         return moment().endOf('week').add(1, 'days').format('MMM Do YY')
       },
       rows: function () {
-        var now = moment().add(-1, 'weeks')
-        var diff = Math.abs(moment('20160627', 'YYYYMMDD').diff(now, 'days'))
+        var now = moment()
+        var diff = Math.abs(moment('20160704', 'YYYYMMDD').diff(now, 'days')) + 1
         var rows = []
 
         for (var i = diff; i >= 7; i = i - 7) {
-          this.jobs.push(this.jobs.shift())
+          this.jobs.unshift(this.jobs[this.jobs.length - 1])
+          this.jobs.pop()
         }
 
         for ( var i = 0; i < this.users.length; i++) {
