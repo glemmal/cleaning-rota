@@ -4,7 +4,7 @@ Keep track of your shared flat cleaning rota!
 Just edit the file main.js with the appropriate jobs and users.
 The rota get's updated automatically every week.
 
-Demo: [here](http://glemmal.github.io/game-of-life)
+Demo: [here](http://glemmal.github.io/cleaning-rota)
 
 ```javascript
 {
